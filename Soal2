@@ -1,0 +1,9 @@
+SELECT m.nama, d.nama_dosen
+FROM tbmhs m INNER JOIN tbdosen d INNER JOIN tbkrs k INNER JOIN tbkelas kl INNER JOIN tbmatakuliah mk INNER JOIN tbprodi p INNER JOIN tbruangan r
+ON (m.nim=k.nim)
+AND (k.id_kelas=kl.idkelas)
+AND (kl.id_dosen=d.id_dosen)
+AND (kl.id_mata_kuliah=mk.id_mata_kuliah)
+AND (mk.id_prodi=p.id_prodi)
+AND (r.no_ruangan=kl.no_ruangan)
+WHERE (r.nama_ruangan="2.3")
